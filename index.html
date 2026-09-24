@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://www.gonzalezinmuebles.com.ar/">
+<link rel="icon" href="/img/isotipo.svg">
+<link rel="preload" as="image" href="/img/hero.jpg" fetchpriority="high">
+<title>González Inmuebles — Propiedades en la Ciudad de Buenos Aires</title>
+<meta name="description" content="Inmobiliaria con más de 20 años en Villa Urquiza, Parque Chas y Palermo. Propiedades, tasación online con datos oficiales de la Ciudad y asesoramiento hasta la escritura.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<!-- ============ HEADER ============ -->
+<div class="top" id="top">
+  <div class="top-in">
+    <a class="logo" href="#inicio" aria-label="González Inmuebles, inicio"><img src="/img/logo-horizontal.png" alt="González Inmuebles" width="190" height="69"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#propiedades">Propiedades</a>
+      <a href="#tasacion">Tasación</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="top-cta">
+      <a class="btn btn-primary" href="#tasacion"><span class="cta-long">Tasar mi propiedad</span><span class="cta-short" aria-hidden="true">Tasar</span></a>
+      <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="drawer-bd" id="drawerBd"></div>
+<div class="drawer" id="drawer" role="dialog" aria-label="Menú">
+  <a href="#propiedades">Propiedades</a><a href="#tasacion">Tasación</a><a href="#nosotros">Nosotros</a><a href="#zonas">Zonas</a><a href="#recorrido">Recorrido</a><a href="#mercado">Mercado</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a>
+  <div class="sep"></div>
+  <a class="btn btn-primary" href="#tasacion">Tasar mi propiedad</a>
+</div>
+  <a href="#propiedades">Propiedades</a><a href="#tasacion">Tasación</a><a href="#nosotros">Nosotros</a><a href="#zonas">Zonas</a><a href="#recorrido">Recorrido</a><a href="#mercado">Mercado</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a>
+</div>
+
+<main id="contenido">
+<!-- ============ 1 · INICIO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero-box" style="background-image:url(/img/hero.jpg)">
+    <svg class="hero-map" id="heroMap" aria-hidden="true"></svg>
+    <div class="hero-veil"></div>
+    <div class="hero-tag"><i></i>Estudio en Palermo · Ciudad de Buenos Aires</div>
+    <div class="hero-txt">
+      <span class="lbl">Villa Urquiza · Parque Chas · Palermo</span>
+      <h1>Cada metro cuadrado<br><em>tiene una historia.</em></h1>
+      <p class="lead">Hace más de veinte años acompañamos a familias e inversores en la Ciudad de Buenos Aires. Con criterio para negociar y datos oficiales para decidir.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#propiedades">Ver propiedades</a>
+        <a class="btn btn-inverse" href="#tasacion">¿Cuánto vale mi propiedad?</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 2 · BUSCADOR ============ -->
+  <form class="search reveal" id="search" role="search" aria-label="Buscar propiedades">
+    <div class="search-head">
+      <div class="tabs" role="tablist" aria-label="Operación">
+        <button type="button" role="tab" aria-selected="true" data-op="Venta">Comprar</button>
+        <button type="button" role="tab" aria-selected="false" data-op="Alquiler">Alquilar</button>
+        <button type="button" role="tab" aria-selected="false" data-op="Emprendimiento">Emprendimientos</button>
+      </div>
+    </div>
+    <div class="fields">
+      <div class="f"><label for="s-zona">Barrio</label><select id="s-zona"><option value="">Todos los barrios</option></select></div>
+      <div class="f"><label for="s-tipo">Tipo</label><select id="s-tipo"><option value="">Todos</option><option>Departamento</option><option>PH</option><option>Casa</option></select></div>
+      <div class="f"><label for="s-amb">Ambientes</label><select id="s-amb"><option value="">Cualquiera</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4 o más</option></select></div>
+      <div class="f"><label for="s-max" id="s-max-l">Hasta (USD)</label><input id="s-max" inputmode="numeric" placeholder="Sin límite"></div>
+      <button class="btn btn-primary" type="submit">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar
+      </button>
+    </div>
+    <div class="quick">
+      <button type="button" class="chip" data-q="credito" aria-pressed="false">Apto crédito</button>
+      <button type="button" class="chip" data-q="cochera" aria-pressed="false">Con cochera</button>
+      <button type="button" class="chip" data-q="exterior" aria-pressed="false">Balcón o patio</button>
+      <button type="button" class="chip" data-q="fav" aria-pressed="false">Mis favoritos</button>
+      <span class="count" id="count"></span>
+    </div>
+  </form>
+</section>
+
+<!-- ============ 3 · DESTACADAS ============ -->
+<section class="sec wrap" id="propiedades">
+  <div class="head-row reveal">
+    <div><span class="lbl" id="propsLbl">Selección</span><h2 class="u-mt-3" id="propsTit">Propiedades destacadas</h2><p class="u-note u-mt-2" id="propsSub">Una muestra de lo que tenemos disponible hoy.</p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn btn-outline" id="limpiar" hidden>Limpiar filtros</button><a class="btn btn-outline" href="#contacto">Consultar por otra propiedad</a></div>
+  </div>
+  <div class="cards" id="cards"></div>
+  <p class="note">Propiedades de muestra con ilustraciones de referencia. La referencia de US$/m² de cada barrio es el dato oficial de la Ciudad (DGEyC, 1.er trimestre 2026).</p>
+</section>
+
+<!-- ============ 4 · TASACIÓN ============ -->
+<section class="sec" id="tasacion">
+  <div class="tas reveal">
+    <div>
+      <span class="lbl u-gold">Simulador de tasación</span>
+      <h2>¿Cuánto vale hoy tu propiedad?</h2>
+      <p class="lead">Tres pasos y obtenés un rango estimado calculado con los valores oficiales por barrio de la Ciudad de Buenos Aires. Sin cargo y sin compromiso.</p>
+      <div class="steps" id="steps">
+        <div class="step-item on" data-s="1"><b>1</b><div><div class="t">La propiedad</div><div class="s" id="sum1">Barrio y tipo</div></div></div>
+        <div class="step-item" data-s="2"><b>2</b><div><div class="t">Características</div><div class="s" id="sum2">Superficie, estado y extras</div></div></div>
+        <div class="step-item" data-s="3"><b>3</b><div><div class="t">Tus datos</div><div class="s">Para enviarte el informe</div></div></div>
+      </div>
+      <p class="tas-src">Base de cálculo: precio de oferta promedio por m² de departamentos usados de 2 ambientes, por barrio, publicado por la Dirección General de Estadística y Censos de la Ciudad (1.er trimestre 2026). Es una referencia orientativa: el valor final surge de la visita.</p>
+    </div>
+
+    <div class="tas-main">
+      <form class="tform" id="tform" novalidate>
+        <div><span class="lbl" id="stepLbl">Paso 1 de 3</span><div class="bar"><i id="bar"></i></div></div>
+
+        <div class="pane on" data-p="1">
+          <h3>Contanos sobre la propiedad</h3>
+          <div class="field"><label for="t-barrio">Barrio</label><select id="t-barrio" required></select></div>
+          <div class="field"><span class="lab">Tipo</span><div class="segment" data-name="tipo"><button type="button" aria-pressed="true" data-v="Departamento">Departamento</button><button type="button" aria-pressed="false" data-v="PH">PH</button><button type="button" aria-pressed="false" data-v="Casa">Casa</button></div></div>
+          <div class="field"><span class="lab">Ambientes</span><div class="segment" data-name="amb"><button type="button" aria-pressed="false" data-v="1">1</button><button type="button" aria-pressed="true" data-v="2">2</button><button type="button" aria-pressed="false" data-v="3">3</button><button type="button" aria-pressed="false" data-v="4">4+</button></div></div>
+        </div>
+
+        <div class="pane" data-p="2">
+          <h3>Características</h3>
+          <div class="two">
+            <div class="field"><label for="t-m2">Superficie total (m²)</label><input id="t-m2" inputmode="numeric" placeholder="Ej: 65" required></div>
+            <div class="field"><label for="t-ant">Antigüedad</label><select id="t-ant"><option value="1.28">A estrenar</option><option value="1.08">Hasta 10 años</option><option value="1" selected>10 a 30 años</option><option value="0.94">30 a 50 años</option><option value="0.88">Más de 50 años</option></select></div>
+          </div>
+          <div class="field"><span class="lab">Estado general</span><div class="segment" data-name="estado"><button type="button" aria-pressed="false" data-v="1.05">Excelente</button><button type="button" aria-pressed="true" data-v="1">Bueno</button><button type="button" aria-pressed="false" data-v="0.86">A refaccionar</button></div></div>
+          <div class="field"><span class="lab">Extras</span><div class="checks">
+            <button type="button" class="chip" aria-pressed="false" data-x="cochera">Cochera</button>
+            <button type="button" class="chip" aria-pressed="false" data-x="exterior">Balcón, patio o terraza</button>
+            <button type="button" class="chip" aria-pressed="false" data-x="amenities">Amenities</button>
+            <button type="button" class="chip" aria-pressed="false" data-x="luz">Al frente / muy luminoso</button>
+          </div></div>
+          <p class="err" id="err2">Ingresá la superficie en m² (entre 15 y 2.000).</p>
+        </div>
+
+        <div class="pane" data-p="3">
+          <h3>¿A dónde te enviamos la estimación?</h3>
+          <div class="field"><label for="t-nombre">Nombre y apellido</label><input id="t-nombre" autocomplete="name" required></div>
+          <div class="two">
+            <div class="field"><label for="t-mail">Email</label><input id="t-mail" type="email" autocomplete="email"></div>
+            <div class="field"><label for="t-wa">WhatsApp</label><input id="t-wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="11 5555-5555"></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="t-ok" checked>Acepto que González Inmuebles me contacte para coordinar la tasación presencial.</label>
+          <p class="err" id="err3">Completá tu nombre y al menos un medio de contacto (email o WhatsApp).</p>
+        </div>
+
+        <div class="nav-btns">
+          <button type="button" class="btn btn-outline" id="prev" hidden>Volver</button>
+          <button type="button" class="btn btn-primary" id="next">Continuar</button>
+        </div>
+      </form>
+
+      <div class="result locked" id="result" aria-live="polite">
+        <span class="lbl u-mint">Tu estimación</span>
+        <div class="big" id="rBig">USD 000.000</div>
+        <div class="rng" id="rRng">entre 000.000 y 000.000</div>
+        <div class="gauge">
+          <div class="track"><div class="fill" id="gFill" style="left:30%;width:40%"></div><div class="dot" id="gDot" style="left:50%"></div></div>
+          <div class="ends"><span id="gMin">Barrio más accesible</span><span id="gMax">Más caro</span></div>
+        </div>
+        <div class="breakdown" id="breakdown"></div>
+        <div class="lockmsg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8960F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <span>Se desbloquea al completar tus datos en el paso 3.</span>
+        </div>
+        <div class="after">
+          <a class="btn btn-primary" id="rWa" target="_blank" rel="noopener">Coordinar tasación presencial</a>
+          <button class="btn btn-inverse" type="button" id="rAgain">Calcular otra propiedad</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · QUIÉNES SOMOS ============ -->
+<section class="sec wrap about" id="nosotros">
+  <div class="collage reveal">
+    <div class="placeholder a u-clip"><img class="ilus" src="/img/martin.jpg" alt="Martín González, corredor inmobiliario"></div>
+    <div class="placeholder b u-clip"><img class="ilus" src="/img/of1.jpg" alt="La oficina de González Inmuebles"></div>
+    <div class="stat-float"><div class="n">+20</div><div class="u-note">años en la Ciudad</div></div>
+  </div>
+  <div class="reveal">
+    <span class="lbl">Quiénes somos</span>
+    <h2 class="u-mt-4">Una inmobiliaria familiar con mirada de largo plazo.</h2>
+    <p class="lead u-mt-6">Empezamos en Villa Urquiza y Parque Chas, trabajando cada operación como si fuera propia. Hoy, desde nuestro estudio en Palermo, mantenemos la misma forma de hacer las cosas: pocas propiedades a la vez, mucha dedicación y acompañamiento hasta la escritura.</p>
+    <blockquote>«No vendemos propiedades. Te asesoramos en el próximo capítulo de tu vida.»</blockquote>
+    <div class="sign"><b>Martín González</b><span class="pill">Corredor inmobiliario · CPI MN 524</span></div>
+  </div>
+</section>
+
+<!-- ============ 6 · PROPUESTA DE VALOR ============ -->
+<section class="sec wrap" id="propuesta">
+  <div class="center reveal u-narrow"><span class="lbl">Nuestra propuesta</span><h2 class="u-mt-4">Lo que nos hace distintos</h2></div>
+  <div class="vals">
+    <div class="val reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span><h3>Precio justo, con datos</h3><p>Tasamos cruzando los valores oficiales del barrio con operaciones comparables. Vendés al mejor valor posible y en menos tiempo.</p></div>
+    <div class="val reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 8h3l2-3h8l2 3h3v11H3z"/><circle cx="12" cy="13" r="3.4"/></svg></span><h3>Presentación de primer nivel</h3><p>Fotografía profesional, video, tour 360° y planos. Tu propiedad se ve como merece en cada portal.</p></div>
+    <div class="val dark reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Seguridad en cada paso</h3><p>Verificamos títulos, deudas y compradores antes de avanzar. Sin sorpresas el día de la escritura.</p></div>
+    <div class="val reveal"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-5-6.7"/></svg></span><h3>Trato directo y personal</h3><p>Hablás siempre con quien lleva tu operación, y recibís un informe quincenal de visitas y consultas.</p></div>
+  </div>
+</section>
+
+<!-- ============ 7 · ZONAS ============ -->
+<section class="sec wrap zones" id="zonas">
+  <div class="reveal">
+    <span class="lbl">Dónde operamos</span>
+    <h2 class="u-mt-4">Conocemos cada cuadra</h2>
+    <p class="lead u-mt-5">Trabajamos en toda la Ciudad, con foco en el corredor norte: los <b>28 barrios</b> que están por encima de la traza de la Autopista 25 de Mayo, desde Villa Real hasta Puerto Madero. Conocer el barrio a fondo es lo que nos permite tasar con precisión y encontrar al comprador indicado.</p>
+    <div class="zdrop" id="zdrop">
+      <button type="button" class="zdrop-btn" id="zdropBtn" aria-expanded="false" aria-controls="zdropPanel">
+        <span><span class="lbl u-xs">Elegí un barrio</span><b id="zdropSel">Villa Urquiza</b></span>
+        <span class="zdrop-val" id="zdropVal"></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="zdrop-panel" id="zdropPanel" role="listbox" aria-label="Barrios donde operamos" hidden></div>
+    </div>
+    <div class="zinfo" id="zinfo"></div>
+  </div>
+  <div class="zaside reveal">
+    <div class="zcard">
+      <span class="lbl">Dónde estamos</span>
+      <div class="t">Arévalo 1800, Palermo</div>
+      <div class="u-mt-2 u-note">Lunes a viernes de 9 a 18 h · Sábados con cita previa</div>
+      <div class="u-mt-4" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-outline" href="#contacto">Cómo llegar</a><a class="btn btn-primary" href="https://wa.me/5491124987684?text=Hola%2C%20quiero%20coordinar%20una%20visita%20a%20la%20oficina." target="_blank" rel="noopener">Coordinar visita</a></div>
+    </div>
+    <a class="zcta" href="#mercado">
+      <span><b>Mapa de precios de los 48 barrios</b><p>Mirá cuánto vale el m² en cada barrio, con datos oficiales de la Ciudad.</p></span>
+      <span aria-hidden="true" style="font-size:24px">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 8 · RECORRIDO ============ -->
+<section class="sec wrap" id="recorrido">
+  <div class="head-row reveal"><div><span class="lbl">Nuestro recorrido</span><h2 class="u-mt-3">Casos de éxito</h2></div></div>
+  <div class="cases" id="cases">
+    <article class="case reveal"><div class="placeholder u-flush"><img class="ilus" src="/img/r2.jpg" alt="Render del emprendimiento comercializado" loading="lazy"></div><div class="case-b"><span class="z">Emprendimiento · Villa Urquiza</span><h3>Comercialización integral de un edificio</h3><p>[Completá el desafío, la estrategia y el resultado desde el panel de administración.]</p><div class="case-kpis"><span>[N] unidades</span><span>[N] meses</span></div></div></article>
+    <article class="case reveal"><div class="placeholder u-flush"><img class="ilus" src="/img/b2.jpg" alt="PH reciclado en Almagro" loading="lazy"></div><div class="case-b"><span class="z">PH reciclado · Almagro</span><h3>De propiedad sin movimiento a vendida</h3><div class="case-kpis"><span>[N] días</span><span>[N]% del precio</span></div></div></article>
+    <article class="case reveal"><div class="placeholder u-flush"><img class="ilus" src="/img/parquechas.jpg" alt="Vista aérea de Parque Chas" loading="lazy"></div><div class="case-b"><span class="z">Terreno · Parque Chas</span><h3>Venta con estudio de factibilidad</h3><div class="case-kpis"><span>[N] m² vendibles</span></div></div></article>
+  </div>
+</section>
+
+<!-- ============ 9 · MOMENTOS ============ -->
+<section class="sec wrap" id="momentos">
+  <div class="center reveal u-narrow-sm"><span class="lbl">Momentos</span><h2 class="u-mt-4">Detrás de cada <em>operación</em></h2><p class="lead u-mt-4">Producción fotográfica, video, planos y tour 360° en cada propiedad. Cuando entregamos las llaves, empieza la historia de cada familia.</p></div>
+  <div class="moments" id="moments">
+    <figure class="moment tall reveal"><img class="ilus" src="/img/foto-pro.jpg" alt="Producción de fotos en una propiedad"><figcaption><b>Producción fotográfica</b><span>En cada propiedad</span></figcaption></figure>
+    <figure class="moment reveal"><img class="ilus" src="/img/filmando.jpg" alt="Grabación del video recorrido"></figure>
+    <figure class="moment tall reveal"><img class="ilus" src="/img/estudio.jpg" alt="Tour 360° de una propiedad"><figcaption><b>Tour 360° y video</b><span>Para visitar desde donde estés</span></figcaption></figure>
+    <figure class="moment reveal"><img class="ilus" src="/img/planos.jpg" alt="Planos y medición"></figure>
+    <figure class="moment num reveal"><div class="n">+200</div><div style="font-size:var(--fs-base);line-height:1.45;color:var(--on-dark-2)">familias que ya empezaron una nueva etapa con nosotros</div></figure>
+    <figure class="moment reveal"><img class="ilus" src="/img/villaurquiza.jpg" alt="Calle arbolada de Villa Urquiza"><figcaption><b>Villa Urquiza</b><span>Donde empezó todo</span></figcaption></figure>
+  </div>
+  <p class="note center u-mt-4 u-center-txt">Fotos de nuestro trabajo. Las de clientes se publican siempre con su autorización y se cargan desde el panel de administración.</p>
+</section>
+
+<!-- ============ 10 · MERCADO ============ -->
+<section class="sec" id="mercado">
+  <div class="market">
+    <div class="head-row reveal">
+      <div><span class="lbl">Mercado · Ciudad de Buenos Aires</span><h2 class="u-mt-3">El pulso del mercado porteño</h2></div>
+      <span class="pill" style="background:#fff">Actualizado a septiembre de 2026</span>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi reveal"><span class="k">Precio medio de publicación, departamentos</span><span class="v">US$ 2.476<small style="font-size:14px"> /m²</small></span><div class="d"><span class="delta up">+0,2% mensual</span><span class="delta nt">+1,1% en 2026</span></div><span class="s">Zonaprop Index · agosto 2026</span></div>
+      <div class="kpi reveal"><span class="k">Escrituras de compraventa</span><span class="v">6.051</span><div class="d"><span class="delta up">+9% interanual</span></div><span class="s">Colegio de Escribanos CABA · julio 2026</span></div>
+      <div class="kpi reveal"><span class="k">Compras con crédito hipotecario</span><span class="v">12,8%</span><div class="d"><span class="delta dn">−37% interanual</span></div><span class="s">Escrituras con hipoteca · junio 2026</span></div>
+      <div class="kpi dark reveal"><span class="k">Alquiler medio, 2 ambientes</span><span class="v">$ 886.527</span><div class="d"><span class="delta nt" style="background:rgba(255,255,255,.1);color:#F7C77A">+19,2% en 2026</span></div><span class="s">Inflación del período: 21,5% · Zonaprop · agosto 2026</span></div>
+    </div>
+
+    <div class="mk-grid">
+      <div class="panel reveal">
+        <div class="panel-h"><b>Valor del m² por barrio</b>
+          <div class="tabs" role="tablist" aria-label="Indicador del mapa"><button type="button" role="tab" aria-selected="true" data-mode="m2">US$/m²</button><button type="button" role="tab" aria-selected="false" data-mode="var">Variación anual</button></div>
+        </div>
+        <div class="cmap"><svg id="cmap" role="img" aria-label="Mapa de precios por barrio de la Ciudad de Buenos Aires"></svg><div class="tip" id="ctip"></div></div>
+        <div class="scale" id="scale"></div>
+        <div class="barrio-detail" id="bdetail"></div>
+      </div>
+      <div class="panel reveal">
+        <div class="panel-h"><b>Barrios más valorados</b><span class="mono u-muted">US$/m², 2 amb. usado</span></div>
+        <div class="rank" id="rank"></div>
+        <div class="u-mt-5"><b style="font-size:15px">Valor medio por tipología en la Ciudad</b></div>
+        <div class="types">
+          <div><small>Monoambiente</small><span>US$ 110.196</span></div>
+          <div><small>2 ambientes</small><span>US$ 131.272</span></div>
+          <div><small>3 ambientes</small><span>US$ 180.264</span></div>
+        </div>
+        <p class="note u-mt-2">Zonaprop Index, agosto 2026. Precios de publicación.</p>
+      </div>
+    </div>
+
+    <div class="news">
+      <a class="news-card reveal" href="https://mercado.com.ar/ladrillos-y-proyectos/zonaprop-el-m2-de-departamentos-en-caba-subio-02-en-agosto-y-promedio-us-2-476" target="_blank" rel="noopener"><span class="c">Precios</span><h3>El m² de departamentos se mantiene estable y sigue por debajo de su máximo histórico</h3><p>En agosto el valor medio subió apenas 0,2% y quedó 11,5% por debajo del pico de la serie. Palermo y Núñez siguen entre los barrios más caros.</p><span class="src">Revista Mercado · Zonaprop</span></a>
+      <a class="news-card reveal" href="https://www.colegio-escribanos.org.ar/category/estadisticas-de-escrituras/" target="_blank" rel="noopener"><span class="c">Actividad</span><h3>Las escrituras en la Ciudad crecen frente al año pasado</h3><p>En julio se firmaron 6.051 compraventas, un 9% más que un año atrás. La gran mayoría de las operaciones porteñas sigue haciéndose con ahorro propio.</p><span class="src">Colegio de Escribanos de la Ciudad de Buenos Aires</span></a>
+      <a class="news-card reveal" href="https://www.escribaniavildosola.com.ar/blog/escrituras-caba-junio-2026/" target="_blank" rel="noopener"><span class="c">Crédito</span><h3>El crédito hipotecario pierde peso en las compras</h3><p>En junio, solo el 12,8% de las escrituras se firmó con hipoteca, frente a más del 20% un año antes. Las operaciones con crédito cayeron 37% interanual.</p><span class="src">Análisis de datos del Colegio de Escribanos</span></a>
+    </div>
+    <p class="sources">Fuentes: Dirección General de Estadística y Censos del GCBA, serie Mercado Inmobiliario con datos de Argenprop (1.er trimestre 2026, precios de oferta de departamentos usados de 2 ambientes) · Zonaprop Index (agosto 2026) · Colegio de Escribanos de la Ciudad de Buenos Aires (junio y julio 2026). Los valores de oferta no son precios de cierre, que suelen ubicarse entre 5% y 15% por debajo.</p>
+  </div>
+</section>
+
+<!-- ============ 11 · FAQ ============ -->
+<section class="sec wrap faqwrap" id="faq">
+  <div class="reveal">
+    <span class="lbl">Preguntas frecuentes</span>
+    <h2 class="u-mt-4">Todo lo que querés saber</h2>
+    <div class="faq">
+      <details name="faq" open><summary>¿Cuánto cuesta tasar mi propiedad?<i>+</i></summary><p>Nada. La tasación es sin cargo y sin compromiso. Podés empezar con el simulador online para tener una referencia, y después coordinamos una visita para darte el valor definitivo.</p></details>
+      <details name="faq"><summary>¿Qué tan precisa es la estimación online?<i>+</i></summary><p>Es una referencia. Parte del valor de oferta promedio por m² que publica la Ciudad para cada barrio y lo ajusta por tipo, tamaño, antigüedad, estado y extras. La cuadra, el piso, la vista o las expensas pueden mover el valor, por eso la tasación definitiva siempre se hace en la visita.</p></details>
+      <details name="faq"><summary>¿Qué gastos tiene comprar una propiedad en la Ciudad?<i>+</i></summary><p>Los principales son los honorarios del escribano, el impuesto de sellos (con una exención para vivienda única hasta cierto valor), los certificados e inscripciones, y los honorarios inmobiliarios. En total, suelen representar entre un 6% y un 9% del valor de la operación. Te los calculamos puntualmente antes de que ofertes.</p></details>
+      <details name="faq"><summary>¿Cuánto tarda en venderse una propiedad?<i>+</i></summary><p>Depende sobre todo del precio. Una propiedad bien tasada y bien presentada recibe consultas desde la primera semana. Por eso insistimos tanto en fijar el valor con datos y no con expectativas.</p></details>
+      <details name="faq"><summary>¿Qué documentación necesito para vender?<i>+</i></summary><p>Título de propiedad, DNI de los titulares, últimas boletas de ABL, AySA y expensas, y el reglamento de copropiedad si es un departamento. Si falta algo, te ayudamos a tramitarlo antes de publicar.</p></details>
+      <details name="faq"><summary>¿Trabajan con compradores con crédito hipotecario?<i>+</i></summary><p>Sí. Te indicamos qué propiedades son aptas para crédito y coordinamos con el banco y la escribanía para que los plazos no se estiren.</p></details>
+    </div>
+  </div>
+  <aside class="help reveal">
+    <span class="lbl u-gold">Asistente</span>
+    <h3>¿No encontraste tu respuesta?</h3>
+    <p>Preguntale a nuestro asistente por propiedades, precios por barrio o cómo tasar. Si preferís, te pasamos con Martín.</p>
+    <button class="btn btn-primary" type="button" data-open-chat>Abrir el asistente</button>
+  </aside>
+</section>
+
+<!-- ============ 12 · CONTACTO ============ -->
+<section class="sec wrap contact" id="contacto">
+  <form class="cform reveal" id="cform" novalidate>
+    <span class="lbl">Contacto</span>
+    <h2 class="u-mt-3">Hablemos</h2>
+    <p class="lead u-mt-3">Te respondemos en el día. Si preferís, escribinos directo por WhatsApp.</p>
+    <div class="grid">
+      <label class="sr" for="c-n">Nombre</label><input id="c-n" placeholder="Nombre" autocomplete="name" required>
+      <label class="sr" for="c-t">Teléfono</label><input id="c-t" type="tel" placeholder="Teléfono" autocomplete="tel">
+      <label class="sr" for="c-e">Email</label><input id="c-e" class="full" type="email" placeholder="Email" autocomplete="email">
+      <label class="sr" for="c-m">Motivo</label><select id="c-m" class="full"><option>Quiero vender o tasar</option><option>Busco comprar</option><option>Busco alquilar</option><option>Otra consulta</option></select>
+      <label class="sr" for="c-x">Mensaje</label><textarea id="c-x" placeholder="Mensaje"></textarea>
+      <div class="row"><button class="btn btn-secondary" type="submit">Enviar consulta</button><a class="btn btn-primary" id="c-wa" target="_blank" rel="noopener" href="https://wa.me/5491124987684?text=Hola%20Mart%C3%ADn%2C%20te%20escribo%20desde%20la%20web.">WhatsApp</a></div>
+    </div>
+    <div class="ok" id="c-ok"></div>
+  </form>
+  <div class="cmapbox reveal" id="cmapbox">
+    <div class="cinfo">
+      <div><span class="lbl u-xs">Estudio</span><b>Arévalo 1800, Palermo</b></div>
+      <div><span class="lbl u-xs">Horarios</span><b>Lun a vie · 9 a 18 h</b></div>
+      <a href="tel:+541124987684"><span class="lbl u-xs">Teléfono</span><b>11 2498-7684</b></a>
+      <a href="mailto:info@gonzalezinmuebles.com.ar"><span class="lbl u-xs">Email</span><b>info@gonzalezinmuebles…</b></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="fbox">
+    <div class="fgrid">
+      <div>
+        <img src="/img/logo-horizontal.png" alt="González Inmuebles" width="230" height="83" class="logo-foot">
+        <p style="margin-top:14px;color:var(--mint);font-size:15px;max-width:380px">Recibí el informe mensual del mercado porteño y las nuevas propiedades antes que nadie.</p>
+        <form class="news-in" id="nform"><label class="sr" for="n-e">Tu email</label><input id="n-e" type="email" placeholder="Tu email" required><button class="btn btn-primary" type="submit">Suscribirme</button></form>
+        <p id="n-ok" role="status" aria-live="polite" style="display:none;margin-top:10px;font-size:13px;color:#F7C77A">¡Listo! Te vamos a escribir con el próximo informe.</p>
+      </div>
+      <div><span class="lbl">Propiedades</span><a href="#propiedades">En venta</a><a href="#propiedades">En alquiler</a><a href="#propiedades">Emprendimientos</a><a href="#tasacion">Tasación online</a></div>
+      <div><span class="lbl">Nosotros</span><a href="#nosotros">Quiénes somos</a><a href="#recorrido">Casos de éxito</a><a href="#momentos">Momentos</a><a href="#mercado">Mercado</a></div>
+      <div><span class="lbl">Contacto</span><a href="tel:+541124987684">11 2498-7684</a><a href="https://wa.me/5491124987684" target="_blank" rel="noopener">WhatsApp</a><a href="https://instagram.com/gonzalezinmuebles" target="_blank" rel="noopener">Instagram</a><a href="#faq">Preguntas frecuentes</a></div>
+    </div>
+    <div class="fbot"><span>© 2026 González Inmuebles · Martín González, corredor inmobiliario CPI MN 524</span><span>Arévalo 1800 · Palermo · CABA · <a href="/admin/" style="color:var(--on-dark-faint);text-decoration:underline">Administrar</a></span></div>
+  </div>
+</footer>
+
+
+
+<!-- ============ VISOR DE IMÁGENES ============ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor de imágenes" aria-hidden="true">
+  <div class="lb-top"><span class="n" id="lbN"></span><button type="button" id="lbX" aria-label="Cerrar el visor">×</button></div>
+  <div class="lb-body">
+    <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Imagen anterior">←</button>
+    <img id="lbImg" alt="">
+    <button type="button" class="lb-nav next" id="lbNext" aria-label="Imagen siguiente">→</button>
+  </div>
+  <div class="lb-foot" id="lbFoot"></div>
+</div>
+
+<!-- ============ FICHA DE PROPIEDAD ============ -->
+<div class="modal" id="ficha" role="dialog" aria-modal="true" aria-labelledby="fichaTitulo" aria-hidden="true">
+  <div class="modal-card" id="fichaCard"></div>
+</div>
+
+<!-- ============ CHAT ============ -->
+<button class="chat-fab" id="chatFab" type="button" aria-controls="chat" aria-expanded="false"><span class="ic"><img src="/img/isotipo.svg" alt="" width="24" height="24"></span><span class="txt">¿Te ayudo a buscar?</span></button>
+<div class="chat" id="chat" role="dialog" aria-label="Asistente de González Inmuebles">
+  <div class="chat-h"><span class="av"><img src="/img/isotipo.svg" alt="" width="24" height="24"></span><div><b>Asistente González</b><small><i></i>En línea</small></div><button type="button" id="chatClose" aria-label="Cerrar asistente">×</button></div>
+  <div class="chat-b" id="chatBody" aria-live="polite"></div>
+  <form class="chat-f" id="chatForm"><label class="sr" for="chatIn">Escribí tu mensaje</label><input id="chatIn" placeholder="Escribí tu mensaje…" autocomplete="off"><button type="submit" aria-label="Enviar"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></form>
+</div>
+
+<script src="/assets/js/data.js"></script>
+<script src="/assets/js/app.js" defer></script>
+
+
+</body>
+</html>

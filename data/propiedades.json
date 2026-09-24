@@ -1,0 +1,265 @@
+[
+  {
+    "id": "quevedo",
+    "fotos": [
+      "/img/q1.jpg",
+      "/img/q3.jpg",
+      "/img/q2.jpg",
+      "/img/q7.jpg",
+      "/img/q4.jpg",
+      "/img/q5.jpg",
+      "/img/q6.jpg"
+    ],
+    "titulo": "Departamento de 3 ambientes con terraza y jacuzzi",
+    "barrio": "Villa del Parque",
+    "op": "Venta",
+    "tipo": "Departamento",
+    "amb": 3,
+    "m2": 88,
+    "precio": 215000,
+    "mon": "USD",
+    "tags": [
+      "exterior",
+      "credito",
+      "amenities"
+    ],
+    "etiqueta": "Terraza propia",
+    "destacada": true,
+    "orden": 1,
+    "specs": [
+      "88 m²",
+      "3 amb.",
+      "Terraza",
+      "Jacuzzi"
+    ],
+    "banos": 2,
+    "expensas": 110000,
+    "ant": "A estrenar",
+    "orient": "Frente, con terraza",
+    "credito": true,
+    "cochera": 1,
+    "desc": "Departamento de tres ambientes con terraza propia, jacuzzi exterior y parrilla, en un edificio de pocas unidades. Living comedor integrado a una cocina con isla y muebles a medida, dos dormitorios con placares completos y dos baños revestidos en mármol. Se entrega con cochera cubierta.",
+    "extras": [
+      "Terraza propia",
+      "Jacuzzi",
+      "Cocina con isla",
+      "Cochera cubierta",
+      "Apto crédito"
+    ],
+    "ilus": "torre",
+    "publicada": true
+  },
+  {
+    "id": "bustamante",
+    "fotos": [
+      "/img/b1.jpg",
+      "/img/b2.jpg",
+      "/img/b3.jpg",
+      "/img/b5.jpg"
+    ],
+    "titulo": "PH reciclado con patio y detalles de época",
+    "barrio": "Almagro",
+    "op": "Venta",
+    "tipo": "PH",
+    "amb": 4,
+    "m2": 120,
+    "precio": 239000,
+    "mon": "USD",
+    "tags": [
+      "exterior",
+      "credito"
+    ],
+    "etiqueta": "Sin expensas",
+    "destacada": true,
+    "orden": 2,
+    "specs": [
+      "120 m²",
+      "4 amb.",
+      "Patio",
+      "Sin expensas"
+    ],
+    "banos": 2,
+    "ant": "Reciclado a nuevo",
+    "orient": "Patio y frente",
+    "credito": true,
+    "cochera": 0,
+    "desc": "PH de cuatro ambientes reciclado por completo, con techos altos, vigas de madera a la vista y carpinterías originales recuperadas. Patio con parrilla, entrepiso con escritorio y una planta alta con dos dormitorios. Sin expensas.",
+    "extras": [
+      "Sin expensas",
+      "Patio con parrilla",
+      "Techos de madera",
+      "Entrepiso",
+      "Apto crédito"
+    ],
+    "ilus": "ph",
+    "publicada": true
+  },
+  {
+    "id": "lugones",
+    "fotos": [
+      "/img/l2.jpg",
+      "/img/l1.jpg",
+      "/img/l3.jpg"
+    ],
+    "titulo": "Semipiso a estrenar con amenities y solárium",
+    "barrio": "Núñez",
+    "op": "Venta",
+    "tipo": "Departamento",
+    "amb": 2,
+    "m2": 58,
+    "precio": 189000,
+    "mon": "USD",
+    "tags": [
+      "amenities",
+      "exterior"
+    ],
+    "etiqueta": "A estrenar",
+    "gold": true,
+    "destacada": true,
+    "orden": 3,
+    "specs": [
+      "58 m²",
+      "2 amb.",
+      "Pileta",
+      "Solárium"
+    ],
+    "banos": 1,
+    "expensas": 95000,
+    "ant": "A estrenar",
+    "orient": "Contrafrente",
+    "credito": false,
+    "cochera": 0,
+    "desc": "Dos ambientes a estrenar en un edificio con amenities: pileta, solárium, parrilla y gimnasio. Cocina integrada equipada, balcón al contrafrente y muy buena entrada de luz durante toda la mañana.",
+    "extras": [
+      "Pileta y solárium",
+      "Gimnasio",
+      "Parrilla",
+      "A estrenar"
+    ],
+    "ilus": "interior",
+    "publicada": true
+  },
+  {
+    "id": "emprendimiento",
+    "fotos": [
+      "/img/r1.jpg",
+      "/img/r2.jpg",
+      "/img/r3.jpg"
+    ],
+    "titulo": "Emprendimiento: unidades de 1 y 2 ambientes",
+    "barrio": "Villa Urquiza",
+    "op": "Emprendimiento",
+    "tipo": "Departamento",
+    "amb": 2,
+    "m2": 46,
+    "precio": 129000,
+    "mon": "USD",
+    "desde": true,
+    "tags": [
+      "amenities",
+      "exterior"
+    ],
+    "etiqueta": "En pozo",
+    "destacada": true,
+    "orden": 4,
+    "specs": [
+      "Desde 46 m²",
+      "1 y 2 amb.",
+      "Amenities",
+      "Entrega 2027"
+    ],
+    "banos": 1,
+    "ant": "En construcción, entrega 2027",
+    "orient": "Varias orientaciones",
+    "credito": false,
+    "cochera": 0,
+    "desc": "Emprendimiento en construcción con unidades de uno y dos ambientes, terminaciones de categoría y amenities en la terraza. Plan de pago en pesos con anticipo y cuotas durante la obra. Quedan unidades en distintos pisos y orientaciones.",
+    "extras": [
+      "En pozo",
+      "Plan de pago en cuotas",
+      "Amenities",
+      "Entrega 2027"
+    ],
+    "ilus": "obra",
+    "publicada": true
+  },
+  {
+    "id": "col-alq",
+    "fotos": [],
+    "titulo": "2 ambientes luminoso a estrenar",
+    "barrio": "Colegiales",
+    "op": "Alquiler",
+    "tipo": "Departamento",
+    "amb": 2,
+    "m2": 46,
+    "precio": 780000,
+    "mon": "ARS",
+    "tags": [
+      "exterior",
+      "amenities"
+    ],
+    "etiqueta": "Alquiler",
+    "destacada": true,
+    "orden": 5,
+    "specs": [
+      "46 m²",
+      "2 amb.",
+      "Balcón",
+      "Amenities"
+    ],
+    "banos": 1,
+    "expensas": 140000,
+    "ant": "A estrenar",
+    "orient": "Contrafrente luminoso",
+    "credito": false,
+    "cochera": 0,
+    "desc": "Dos ambientes a estrenar a pasos de la estación de Colegiales. Cocina integrada equipada, balcón al contrafrente y amenities en la terraza. Contrato de 24 meses con actualización por índice.",
+    "extras": [
+      "A estrenar",
+      "Balcón",
+      "Amenities",
+      "Cocina equipada"
+    ],
+    "ilus": "interior",
+    "publicada": true
+  },
+  {
+    "id": "vo-2amb",
+    "fotos": [],
+    "titulo": "2 ambientes reciclado a nuevo",
+    "barrio": "Villa Ortúzar",
+    "op": "Venta",
+    "tipo": "Departamento",
+    "amb": 2,
+    "m2": 52,
+    "precio": 149000,
+    "mon": "USD",
+    "tags": [
+      "credito"
+    ],
+    "etiqueta": "Apto crédito",
+    "destacada": true,
+    "orden": 6,
+    "specs": [
+      "52 m²",
+      "2 amb.",
+      "Reciclado",
+      "Contrafrente"
+    ],
+    "banos": 1,
+    "expensas": 78000,
+    "ant": "Reciclado",
+    "orient": "Contrafrente",
+    "credito": true,
+    "cochera": 0,
+    "desc": "Dos ambientes reciclado a nuevo en Villa Ortúzar: pisos, instalaciones, cocina y baño renovados por completo. Contrafrente luminoso y silencioso, con expensas bajas. Ideal como primera vivienda o para renta.",
+    "extras": [
+      "Reciclado a nuevo",
+      "Expensas bajas",
+      "Apto crédito",
+      "Luminoso"
+    ],
+    "ilus": "cocina",
+    "publicada": true
+  }
+]

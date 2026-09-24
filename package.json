@@ -1,0 +1,11 @@
+{
+  "name": "gonzalez-inmuebles-web",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sitio de González Inmuebles: estático, con panel de carga propio sobre funciones de Netlify.",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo \"Sitio estático: no requiere build\""
+  }
+}

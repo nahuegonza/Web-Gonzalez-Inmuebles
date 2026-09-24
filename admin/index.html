@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel de carga — González Inmuebles</title>
+<link rel="icon" href="/img/isotipo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;600;700&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<style>
+  body{background:var(--bg)}
+  .adm-top{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);
+    padding:calc(14px + env(safe-area-inset-top,0px)) var(--s-6) var(--s-4);background:var(--green);color:var(--white);flex-wrap:wrap}
+  .adm-top img{height:34px}
+  .adm-wrap{width:min(1100px,100% - 32px);margin:var(--s-6) auto var(--s-16)}
+  .login{width:min(400px,100% - 32px);margin:12vh auto;padding:var(--s-8);background:var(--white);border:1px solid var(--line);border-radius:var(--r-2xl);display:flex;flex-direction:column;gap:var(--s-4)}
+  .login img{height:44px;align-self:flex-start}
+  .adm-tabs{display:flex;gap:var(--s-2);flex-wrap:wrap;margin-bottom:var(--s-6)}
+  .adm-tabs button{min-height:44px;padding:0 var(--s-5);border:1px solid var(--line);border-radius:var(--r-pill);background:var(--white);font-weight:600;cursor:pointer}
+  .adm-tabs button[aria-selected="true"]{background:var(--green);border-color:var(--green);color:var(--white)}
+  .adm-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--s-6);align-items:start}
+  .adm-list{display:flex;flex-direction:column;gap:var(--s-2)}
+  .adm-item{display:flex;align-items:center;gap:var(--s-3);padding:var(--s-3);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--white)}
+  .adm-item img{width:64px;height:48px;object-fit:cover;border-radius:var(--r-sm);flex:0 0 64px;background:var(--soft2)}
+  .adm-item .t{flex:1;min-width:0}
+  .adm-item .t b{display:block;font-size:var(--fs-md);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .adm-item .t span{font-size:var(--fs-xs);color:var(--muted)}
+  .adm-item button{min-height:38px;padding:0 var(--s-3);border-radius:var(--r-md);border:1px solid var(--line);background:var(--white);font-size:var(--fs-sm);font-weight:600;cursor:pointer}
+  .adm-item button.del{border-color:#E3C6BF;color:var(--down)}
+  .adm-form{padding:var(--s-6);border:1px solid var(--line);border-radius:var(--r-xl);background:var(--white);display:flex;flex-direction:column;gap:var(--s-4)}
+  .adm-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3)}
+  .adm-row.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .adm-form label{display:flex;flex-direction:column;gap:6px;font-size:var(--fs-sm);font-weight:600;color:var(--ink2)}
+  .adm-form input,.adm-form select,.adm-form textarea{min-height:46px;padding:0 var(--s-3);border:1px solid var(--line);border-radius:var(--r-md);background:var(--white);font-size:var(--fs-md);font-weight:400}
+  .adm-form textarea{min-height:110px;padding:var(--s-3);resize:vertical;line-height:1.5}
+  .adm-fotos{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+  .adm-foto{position:relative;width:92px;height:70px;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line)}
+  .adm-foto img{width:100%;height:100%;object-fit:cover}
+  .adm-foto button{position:absolute;top:3px;right:3px;width:24px;height:24px;border:0;border-radius:var(--r-pill);background:rgba(11,43,32,.85);color:var(--white);font-size:13px;cursor:pointer}
+  .adm-foto .pos{position:absolute;left:3px;bottom:3px;padding:1px 6px;border-radius:var(--r-pill);background:rgba(11,43,32,.85);color:var(--white);font-family:var(--mono);font-size:10px}
+  .adm-drop{display:flex;align-items:center;justify-content:center;width:92px;height:70px;border:1px dashed var(--line);border-radius:var(--r-md);cursor:pointer;color:var(--muted);font-size:24px}
+  .adm-msg{padding:var(--s-3) var(--s-4);border-radius:var(--r-md);font-size:var(--fs-base);display:none;margin-bottom:var(--s-4)}
+  .adm-msg.on{display:block;background:#E4F0E9;color:var(--up)}
+  .adm-msg.err{background:#F6E6E2;color:var(--down)}
+  .adm-vacio{padding:var(--s-6);border:1px dashed var(--line);border-radius:var(--r-lg);color:var(--muted);text-align:center}
+  @media (max-width:900px){.adm-grid{grid-template-columns:1fr}.adm-row,.adm-row.tres{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section id="login" class="login">
+  <img src="/img/logo-horizontal.png" alt="González Inmuebles">
+  <h1 style="font-family:var(--display);font-size:26px;font-weight:600">Panel de carga</h1>
+  <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Usuario
+    <input id="usuario" autocomplete="username" style="min-height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px"></label>
+  <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600">Contraseña
+    <input id="clave" type="password" autocomplete="current-password" style="min-height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px"></label>
+  <div class="adm-msg" id="loginMsg"></div>
+  <button class="btn btn-primary" id="entrar" type="button">Entrar</button>
+  <a href="/" style="font-size:13px;color:var(--gold2)">← Volver al sitio</a>
+</section>
+
+<div id="app" hidden>
+  <div class="adm-top">
+    <img src="/img/logo-horizontal.png" alt="González Inmuebles">
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn btn-inverse" href="/" target="_blank" rel="noopener">Ver el sitio</a>
+      <button class="btn btn-inverse" type="button" id="salir">Salir</button>
+    </div>
+  </div>
+  <div class="adm-wrap" id="wrap"><p class="adm-vacio">Cargando…</p></div>
+</div>
+
+<script src="/assets/js/admin.js"></script>
+</body>
+</html>

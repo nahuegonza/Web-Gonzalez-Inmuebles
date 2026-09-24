@@ -1,0 +1,37 @@
+[
+  {
+    "titulo": "Comercialización integral de un edificio",
+    "categoria": "Emprendimiento",
+    "barrio": "Villa Urquiza",
+    "resumen": "Completá el desafío, la estrategia y el resultado desde el panel.",
+    "foto": "/img/r2.jpg",
+    "kpis": [
+      "[N] unidades",
+      "[N] meses"
+    ],
+    "orden": 1
+  },
+  {
+    "titulo": "De propiedad sin movimiento a vendida",
+    "categoria": "PH reciclado",
+    "barrio": "Almagro",
+    "resumen": "",
+    "foto": "/img/b2.jpg",
+    "kpis": [
+      "[N] días",
+      "[N]% del precio"
+    ],
+    "orden": 2
+  },
+  {
+    "titulo": "Venta con estudio de factibilidad",
+    "categoria": "Terreno",
+    "barrio": "Parque Chas",
+    "resumen": "",
+    "foto": "/img/parquechas.jpg",
+    "kpis": [
+      "[N] m² vendibles"
+    ],
+    "orden": 3
+  }
+]
