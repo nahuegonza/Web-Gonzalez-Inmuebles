@@ -235,44 +235,49 @@ function trapFocus(cont,e){
   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
 }
 function abrirFicha(p){
-  var f=FICHAS[p.id]||{},ref=valorM2(p.barrio),usd=p.mon==='USD',ppm=usd?Math.round(p.precio/p.m2):null;
-  var filas=[['Operación',p.op],['Tipo',p.tipo],['Ambientes',p.amb],['Baños',f.banos||'—'],['Superficie',p.m2+' m²'],
-    ['Cochera',f.cochera?f.cochera+(f.cochera>1?' cocheras':' cochera'):'No'],['Expensas',f.expensas?'$ '+fmt(f.expensas):'Sin expensas'],
-    ['Antigüedad',f.ant||'—'],['Zona',p.zona||p.barrio],['Orientación',f.orient||'—'],['Apto crédito',f.credito?'Sí':'No']];
+  var f=FICHAS[p.id]||{},usd=p.mon==='USD',ppm=usd?Math.round(p.precio/p.m2):null;
+  var sinExp=(p.specs||[]).concat(f.extras||[]).indexOf('Sin expensas')>-1||p.etiqueta==='Sin expensas';
+  var det=[
+    ['🏠','Tipo',p.tipo],
+    ['📐','Superficie',(p.desde?'Desde ':'')+p.m2+' m²'],
+    ['🛋️','Ambientes',p.amb],
+    ['🛁','Baños',f.banos||'A confirmar'],
+    ['🚗','Cochera',f.cochera?f.cochera+(f.cochera>1?' cocheras':' cochera'):'Sin cochera'],
+    ['🧾','Expensas',f.expensas?'$ '+fmt(f.expensas):(sinExp?'Sin expensas':'A confirmar')],
+    ['🏗️','Antigüedad',f.ant||'A confirmar'],
+    ['🧭','Orientación',f.orient||'A confirmar'],
+    ['🏦','Apto crédito',f.credito?'Sí':'No']
+  ];
+  var wa=waLink('Hola, me interesa '+p.titulo.toLowerCase()+' en '+p.barrio+' ('+priceTxt(p)+', ref. '+p.id+'). ¿Puedo coordinar una visita?');
   modalCard.innerHTML=
     '<button type="button" class="modal-x" id="fichaX" aria-label="Cerrar la ficha">×</button>'+
     '<div class="ficha-hero" id="fichaGal"></div>'+
-    '<div class="ficha-body"><div>'+
-      '<span class="lbl">'+p.barrio+' · '+p.op+'</span>'+
-      '<h3 class="u-mt-3" id="fichaTitulo">'+p.titulo+'</h3>'+
-      '<div class="specs-grid">'+
-        '<div><small>Superficie</small><span>'+p.m2+' m²</span></div>'+
-        '<div><small>Ambientes</small><span>'+p.amb+'</span></div>'+
-        '<div><small>Baños</small><span>'+(f.banos||'—')+'</span></div>'+
-        '<div><small>'+(usd?'USD por m²':'Expensas')+'</small><span>'+(usd?fmt(ppm):(f.expensas?'$'+fmt(f.expensas):'—'))+'</span></div>'+
-      '</div>'+
-      '<p class="ficha-desc">'+(f.desc||'')+'</p>'+
-      (f.extras?'<div class="quick u-mt-5">'+f.extras.map(function(x){return '<span class="chip" style="cursor:default">'+x+'</span>'}).join('')+'</div>':'')+
-      '<h3 class="u-mt-6" style="font-size:22px">Detalle</h3><div class="ficha-list">'+filas.map(function(r){return '<div><span style="color:var(--muted)">'+r[0]+'</span><span>'+r[1]+'</span></div>'}).join('')+'</div>'+
-
+    '<div class="ficha-body"><div class="ficha-main">'+
+      '<span class="lbl gold">'+p.barrio+' · '+(p.op==='Emprendimiento'?'Emprendimiento':p.op)+'</span>'+
+      '<h3 class="ficha-tit" id="fichaTitulo">'+p.titulo+'</h3>'+
+      (f.desc?'<p class="ficha-desc">'+f.desc+'</p>':'')+
+      (f.extras&&f.extras.length?'<ul class="ficha-extras" aria-label="Destacados">'+f.extras.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>':'')+
+      '<h4 class="ficha-h">Detalle</h4>'+
+      '<div class="ficha-det">'+det.map(function(r){return '<div class="det"><span class="det-ic" aria-hidden="true">'+r[0]+'</span><small>'+r[1]+'</small><b>'+r[2]+'</b></div>'}).join('')+'</div>'+
     '</div>'+
     '<aside class="ficha-aside">'+
       '<div class="price-box"><span class="lbl">'+(p.op==='Alquiler'?'Alquiler mensual':'Precio')+'</span><div class="p">'+priceTxt(p)+'</div>'+
-        (usd?'<div class="u-muted u-mt-2">US$ '+fmt(ppm)+' por m²</div>':'')+
-        '<div class="u-mt-5" style="display:flex;flex-direction:column;gap:8px">'+
-          '<a class="btn btn-primary" target="_blank" rel="noopener" href="'+waLink('Hola, me interesa: '+p.titulo+' en '+p.barrio+' ('+priceTxt(p)+'). ¿Puedo coordinar una visita?')+'">Consultar por WhatsApp</a>'+
+        '<div class="price-sub">'+[usd?'US$ '+fmt(ppm)+' por m²':'',f.expensas?'Expensas $ '+fmt(f.expensas):(sinExp?'Sin expensas':'')].filter(Boolean).join(' · ')+'</div>'+
+        '<div class="price-acts">'+
+          '<a class="btn btn-primary" target="_blank" rel="noopener" href="'+wa+'">Consultar por WhatsApp</a>'+
           '<a class="btn btn-outline" href="#contacto" data-cerrar>Agendar visita</a>'+
         '</div>'+
-        '<div class="u-mt-5" style="display:flex;gap:12px;align-items:center;border-top:1px solid var(--line);padding-top:16px"><div><b style="font-size:15px">Martín González</b><div class="u-muted">Corredor · CPI MN 524</div><a class="u-link" href="tel:+541124987684">11 2498-7684</a></div></div>'+
+        '<div class="agent"><img src="/img/martin.jpg" alt="" width="44" height="44" loading="lazy"><div><b>Martín González</b><span>Corredor · CPI MN 524</span></div><a class="agent-tel" href="tel:+541124987684" aria-label="Llamar al 11 2498-7684"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a></div>'+
       '</div>'+
       miniMapa(p.barrio)+
-    '</aside></div>';
+    '</aside></div>'+
+    '<div class="ficha-bar glass-light"><div><span>'+(p.op==='Alquiler'?'Alquiler mensual':'Precio')+'</span><b>'+priceTxt(p)+'</b></div><a class="btn btn-primary" target="_blank" rel="noopener" href="'+wa+'">WhatsApp</a></div>';
   var fotos=(p.fotos&&p.fotos.length)?p.fotos:[ILUS[p.ilus]];
   var gal=$('#fichaGal');
   gal.innerHTML='<div class="carr"><div class="carr-track">'+fotos.map(function(u,k){return '<img src="'+u+'" alt="'+p.titulo+' · imagen '+(k+1)+'">'}).join('')+'</div>'+
     (fotos.length>1?'<button type="button" class="carr-btn prev" aria-label="Imagen anterior">←</button><button type="button" class="carr-btn next" aria-label="Imagen siguiente">→</button><span class="carr-count">1/'+fotos.length+'</span>':'')+
-    '</div><span class="gal-hint">⤢ Tocá la foto para verla en grande</span>'+
-    '<div class="ficha-tags"><span class="tag'+(p.gold?' gold':'')+'">'+p.etiqueta+'</span><span class="tag">'+p.barrio+'</span></div>';
+    '</div><span class="gal-hint">⤢ Ver en grande</span>'+
+    '<div class="ficha-tags"><span class="tag'+(p.gold?' gold':'')+'">'+p.etiqueta+'</span></div>';
   var ctrl=carrusel(gal.querySelector('.carr'),fotos.length,function(i){abrirVisor(fotos,i,p.titulo)},function(i){
     $$('#fichaThumbs button').forEach(function(b,k){b.setAttribute('aria-current',k===i)});
   });
