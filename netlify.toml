@@ -24,7 +24,8 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    # Se revalida siempre: un CSS o JS viejo en caché rompe la página nueva.
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/data/*"
